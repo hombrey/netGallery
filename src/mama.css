@@ -306,13 +306,13 @@
 
 #context-menu .item {
 	padding: 15px 10px;
-	font-size: 3em;
+	font-size: 1.0em;
 	color:#eee;
 } /* #context-menu .item */
 
 
 #context-menu .i{
-	font-size: 3em;
+	font-size: 1.3em;
 	color:#eee;
 } /* #context-menu .item */
 
@@ -360,7 +360,7 @@
 
 #aboutInfo {
 	color: white;
-	font-size: 3.5em;
+	font-size: 2.5em;
 	width: 30dvw;
 
 } /* #aboutImage */
