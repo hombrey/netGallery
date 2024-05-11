@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ernee's Art Gallery</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="src/mama.css" rel="stylesheet">
+    <script src="src/papa.js"></script> 
+	</head>
+	<body>
+		<div class="background">
+		</div>
+		<div id="overlay" class="visible">
+				<img src="src/button.webp" class="buttonRight">
+				<img src="src/button.webp" class="buttonLeft">
+				<img src="src/button.webp" class="buttonUp">
+				<img src="src/button.webp" class="buttonDown">
+				<div id="centerRegion" onclick="shiftTiles('random')"> </div>
+				<div id="rightRegion" onclick="shiftTiles('right')"> </div>
+				<div id="leftRegion" onclick="shiftTiles('left')"> </div>
+				<div id="upRegion" onclick="shiftTiles('up')"> </div>
+				<div id="downRegion" onclick="shiftTiles('down')"> </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,284 @@
+.background {
+    z-index: 0;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100dvh;
+    width: 100dvw;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+		background-color: black;
+} /* .background */
+/* {{{overlay */
+#overlay {
+	z-index: 5;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100dvh;
+  width: 100dvw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+	background-color: transparent;
+	transition: 100ms;
+} /* .nav */
+
+.invisible {
+	opacity: 0;
+} /* .invisible */
+
+
+.visible {
+	opacity: 1;
+} /* .invisible */
+
+.buttonRight  {
+	position: absolute;
+	width: 5%;
+	height: 8%;
+	right: 3%;
+	top: 46%;	
+} /* .buttonRight */
+
+.buttonLeft  {
+	position: absolute;
+	width: 5%;
+	height: 8%;
+	left: 3%;
+	top: 46%;	
+	transform: rotate(-180deg);	
+} /* .buttonLeft */
+
+.buttonUp  {
+	position: absolute;
+	width: 5%;
+	height: 8%;
+	left: 47.5%;
+	top: 3%;	
+	transform: rotate(-90deg);	
+} /* .buttonUp */
+
+.buttonDown  {
+	position: absolute;
+	width: 5%;
+	height: 8%;
+	left: 47.5%;
+	bottom: 3%;	
+	transform: rotate(90deg);	
+} /* .buttonDown */
+
+#rightRegion {
+	position: absolute;
+	right: 0%;
+	top: 20%;	
+	width: 15%;
+	height: 60%;
+	background-color: transparent;
+} /* rightRegion */
+
+#leftRegion {
+	position: absolute;
+	left: 0%;
+	top: 20%;	
+	width: 15%;
+	height: 60%;
+	background-color: transparent;
+} /* leftRegion */
+
+#upRegion {
+	position: absolute;
+	left: 20%;
+	top: 0%;	
+	width: 60%;
+	height: 15%;
+	background-color: transparent;
+} /* upRegion */
+
+#downRegion {
+	position: absolute;
+	left: 20%;
+	bottom: 0%;	
+	width: 60%;
+	height: 15%;
+	background-color: transparent;
+} /* downRegion */
+
+#centerRegion {
+	position: absolute;
+	left: 15%;
+	bottom: 15%;	
+	width: 70%;
+	height: 70%;
+	background-color: transparent;
+} /* centerRegion */
+
+/* 		}}}overlay */
+/* {{{tiles */
+.tile {
+    z-index: 2;
+    position: fixed;
+    height: 100dvh;
+    width: 100dvw;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+		background-size: cover;
+		background-position: center;
+
+} /* .background */
+
+.imgTile {
+    z-index: 2;
+    position: relative;
+		left: 0px;
+		top: 0px;
+		height: 100%;
+		width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+} /* .background */
+
+
+.center  {
+	top: 0dvh;
+	left: 0dvw;
+} /* .center  */
+
+.left  {
+	top: 0dvh;
+	left: -100dvw;
+} /* .left  */
+
+.right  {
+	top: 0dvh;
+	left: 100dvw;
+} /* .right  */
+
+
+.up  {
+	top: -100dvh;
+	left: 0dvw;
+} /* .up  */
+
+
+.down  {
+	top: 100dvh;
+	left: 0dvw;
+} /* .down  */
+
+ 
+/* 		}}}tiles */
+/* {{{animations */
+
+.flashOverlay {
+	animation: brief-opacity;
+	animation-iteration-count: 1;
+	animation-duration: 200ms;
+} /* .flashOverlay */
+
+@keyframes brief-opacity {
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+} /* @keyframes right-center */
+
+.centerToUp {
+	animation: center-up;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	left: 0dvw;
+} /* .centerToUp */
+
+.downToCenter {
+	animation: down-center;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	left: 0dvw;
+} /* .centerToCenter */
+
+.centerToDown {
+	animation: center-down;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	left: 0dvw;
+} /* .centerToUp */
+
+.upToCenter {
+	animation: up-center;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	left: 0dvw;
+} /* .centerToCenter */
+
+
+.leftToCenter {
+	animation: left-center;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	top: 0dvh;
+} /* .centerToCenter */
+
+.centerToRight {
+	animation: center-right;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	top: 0dvh;
+} /* .centerToCenter */
+
+.rightToCenter {
+	animation: right-center;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	top: 0dvh;
+} /* .rightToCenter */
+
+.centerToLeft {
+	animation: center-left;
+	animation-iteration-count: 1;
+	animation-duration: 400ms;
+	top: 0dvh;
+} /* .centerToLeft */
+
+@keyframes center-up {
+		0% {top: 0dvh;}
+		100% {top: -100dvh;}
+} /* @keyframes center-up */
+
+@keyframes down-center {
+		0% {top: 100dvh;}
+		100% {top: 0dvh;}
+} /* @keyframes down-center */
+
+@keyframes center-down {
+		0% {top: 0dvh;}
+		100% {top: 100dvh;}
+} /* @keyframes center-up */
+
+@keyframes up-center {
+		0% {top: -100dvh;}
+		100% {top: 0dvh;}
+} /* @keyframes down-center */
+
+
+@keyframes center-right {
+		0% {left: 0dvw;}
+		100% {left: 100dvw;}
+} /* @keyframes center-right */
+
+@keyframes left-center {
+		0% {left: -100dvw;}
+		100% {left: 0dvw;}
+} /* @keyframes left-center */
+
+@keyframes center-left {
+		0% {left: 0dvw;}
+		100% {left: -100dvw;}
+} /* @keyframes center-left */
+
+@keyframes right-center {
+		0% {left: 100dvw;}
+		100% {left: 0dvw;}
+} /* @keyframes right-center */
+
+/* 		}}}animations */
