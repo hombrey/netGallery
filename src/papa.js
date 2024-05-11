@@ -43,9 +43,10 @@ function getTouches(evt) {
 }//function getTouches(evt)
 
 function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];                                      
-    xDown = firstTouch.clientX;                                      
-    yDown = firstTouch.clientY;                                      
+		shiftTiles("random");
+    // const firstTouch = getTouches(evt)[0];                                      
+    // xDown = firstTouch.clientX;                                      
+    // yDown = firstTouch.clientY;                                      
 }//function handleTouchStart(evt)
 
 function handleTouchMove(evt) {
@@ -87,7 +88,8 @@ function initWin() {
 		populateImageMatrix();
 		arrangeTiles();
 
-		window.addEventListener('touchstart', shiftTiles('random'), false);
+		window.addEventListener('touchstart', handleTouchStart, false);
+		window.addEventListener('touchmove', handleTouchStart, false);
 } // function initWin
 // }}}init
 // {{{handlers
