@@ -25,8 +25,6 @@ window.addEventListener("keydown", evalKeyDown, false); //capture keypress on bu
 window.addEventListener("DOMContentLoaded", initWin);
 window.addEventListener("contextmenu", customContextMenu);
 window.addEventListener("click", respondToClick);
-window.addEventListener('touchstart', handleTouchStart, false);
-window.addEventListener('touchmove', handleTouchMove, false);
 
 function evalKeyDown(evnt) {
     let keyPressed = evnt.keyCode;
@@ -89,6 +87,7 @@ function initWin() {
 		populateImageMatrix();
 		arrangeTiles();
 
+		window.addEventListener('touchstart', shiftTiles('random'), false);
 } // function initWin
 // }}}init
 // {{{handlers
