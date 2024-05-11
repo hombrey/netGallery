@@ -5,12 +5,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="src/mama.css" rel="stylesheet">
-    <script src="src/papa.js"></script> 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
 	<body>
 		<div class="background">
 		</div>
-		<div id="overlay" class="visible">
+		<div id="overlay" class="invisible">
 				<img src="src/button.webp" class="buttonRight">
 				<img src="src/button.webp" class="buttonLeft">
 				<img src="src/button.webp" class="buttonUp">
@@ -21,5 +21,10 @@
 				<div id="upRegion" onclick="shiftTiles('up')"> </div>
 				<div id="downRegion" onclick="shiftTiles('down')"> </div>
 		</div>
+		<div id="context-menu">
+			<div class="item"> <i class="material-icons">person</i> About The Artist</div>	
+			<div class="item"> <i class="material-icons">favorite</i> Donate To Caritas</div>	
+		</div>	
+    <script src="src/papa.js"></script> 
 	</body>
 </html>

@@ -282,3 +282,42 @@
 } /* @keyframes right-center */
 
 /* 		}}}animations */
+/* {{{context-menu */
+#context-menu {
+	margin: 0px;
+	font-family:"Open Sans", sans-serif;
+	position: fixed;
+	z-index: 10;
+	width: 15dvw;
+	background: #1a1a1a;
+
+	transform:scale(0);
+	transform-origin: top left;
+} /* #context-menu */
+
+#context-menu.active {
+	transform:scale(1);
+	transition: transform 200ms ease-in-out;
+} /* #context-menu.active */
+
+#context-menu.inactive {
+	transform:scale(0);
+} /* #context-menu.active */
+
+#context-menu .item {
+	padding: 15px 10px;
+	font-size: 1em;
+	color:#eee;
+} /* #context-menu .item */
+
+#context-menu .item i {
+	display:inline-block;
+	margin-right: 5px;
+} /* #context-menu .item i */
+
+#context-menu .item:hover {
+	background:#555;
+} /* #context-menu .item:hover */
+
+
+/* 		}}}context-menu */

@@ -12,11 +12,16 @@ const imgLeft = document.createElement('img');
 const imgRight = document.createElement('img');
 const imgUp = document.createElement('img');
 const imgDown = document.createElement('img');
+
+const contextElement = document.getElementById("context-menu");
+
 var xCurr, yCurr;
 // }}}variables
 // {{{event listeners
 window.addEventListener("keydown", evalKeyDown, false); //capture keypress on bubbling (false) phase
 window.addEventListener("DOMContentLoaded", initWin);
+window.addEventListener("contextmenu", customContextMenu);
+window.addEventListener("click", respondToClick);
 
 function evalKeyDown(evnt) {
     let keyPressed = evnt.keyCode;
@@ -180,6 +185,20 @@ function settleAndRetile() {
 			overlay.setAttribute("class","invisible")
 		}, settleTime)
 } // function settleAndRetile()
+
+function customContextMenu(event) {
+	event.preventDefault();
+
+	contextElement.style.top = event.offsetY + "px";
+	contextElement.style.left = event.offsetX + "px";
+	// contextElement.classList.add("active");
+	contextElement.setAttribute("class","active")
+	console.log("show context menu")
+} // function customContextMenu
+
+function respondToClick() {
+	contextElement.setAttribute("class","inactive")
+} // function respondToClick()
 // }}}handlers
 // {{{helpers
 function debugLog(msg) {
