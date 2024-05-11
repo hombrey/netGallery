@@ -89,7 +89,6 @@ function initWin() {
 		arrangeTiles();
 
 		window.addEventListener('touchstart', handleTouchStart, false);
-		window.addEventListener('touchmove', handleTouchStart, false);
 } // function initWin
 // }}}init
 // {{{handlers
