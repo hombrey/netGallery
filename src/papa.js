@@ -17,8 +17,6 @@ const imgDown = document.createElement('img');
 const contextElement = document.getElementById("context-menu");
 
 var xCurr, yCurr;
-var xDown = null;                                                        
-var yDown = null;
 // }}}variables
 // {{{event listeners
 window.addEventListener("keydown", evalKeyDown, false); //capture keypress on bubbling (false) phase
@@ -37,50 +35,9 @@ function evalKeyDown(evnt) {
 		} // switch (keyPressed)
 } // function evalKeyDown
 
-function getTouches(evt) {
-  return evt.touches ||             // browser API
-         evt.originalEvent.touches; // jQuery
-}//function getTouches(evt)
-
 function handleTouchStart(evt) {
 		shiftTiles("random");
-    // const firstTouch = getTouches(evt)[0];                                      
-    // xDown = firstTouch.clientX;                                      
-    // yDown = firstTouch.clientY;                                      
 }//function handleTouchStart(evt)
-
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    } //if !xDown or !yDown
-
-    var xUp = evt.touches[0].clientX;                                    
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-                                                                         
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
-            /* right swipe */ 
-						debugLog("swipe right")
-        } else {
-            /* left swipe */
-						debugLog("swipe left")
-        } //if xDiff                      
-    } else {
-        if ( yDiff > 0 ) {
-            /* down swipe */ 
-						debugLog("swipe down")
-        } else { 
-            /* up swipe */
-						debugLog("swipe up")
-        } //if yDiff                                                                 
-    } //else
-    /* reset values */
-    xDown = null;
-    yDown = null;                                             
-}//function handleTouchMove
 
 // }}}event listeners
 // {{{init
@@ -89,6 +46,7 @@ function initWin() {
 		arrangeTiles();
 
 		window.addEventListener('touchstart', handleTouchStart, false);
+		window.addEventListener('touchend', respondToClick, false);
 } // function initWin
 // }}}init
 // {{{handlers
