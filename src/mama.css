@@ -68,6 +68,15 @@
 	transform: rotate(90deg);	
 } /* .buttonDown */
 
+
+.buttonHamburger  {
+	position: absolute;
+	width: 5%;
+	height: 8%;
+	left: 1%;
+	top: 1%;	
+} /* .buttonHamburger */
+
 #rightRegion {
 	position: absolute;
 	right: 0%;
@@ -112,6 +121,16 @@
 	height: 70%;
 	background-color: transparent;
 } /* centerRegion */
+
+
+#hamburgerRegion {
+	position: absolute;
+	left: 0%;
+	top: 0%;	
+	width: 15%;
+	height: 15%;
+	background-color: transparent;
+} /* upRegion */
 
 /* 		}}}overlay */
 /* {{{tiles */

@@ -1,6 +1,7 @@
 // {{{variables
 let debugMode=true;
 let imageMatrix; 
+let letMenuPop=false;
 const tileCenter = document.createElement('div');
 const tileLeft = document.createElement('div');
 const tileRight = document.createElement('div');
@@ -136,13 +137,14 @@ function imagesToTiles(xCenter,yCenter) {
 function shiftTiles(direction) {
 
 			if (direction=="random") {
-								let getDirection = Math.floor(Math.random()*4);
+								let getDirection = Math.floor(Math.random()*5);
 								debugLog("random direction: "+getDirection);
 								switch (getDirection) {
 										case 0: direction="left";break;
 										case 1: direction="right";break;
 										case 2: direction="down";break;
 										case 3: direction="up";break;
+										case 4: direction="popMenu";break;
 										default: return;
 								} //switch(getDirection)
 			} // if (direction=="random")
@@ -167,6 +169,9 @@ function shiftTiles(direction) {
 				tileUp.setAttribute('class','tile upToCenter');
 				tileCenter.setAttribute('class','tile centerToDown'); 
 				yCurr--; if (yCurr < 0) yCurr = matrixHeight - 1;
+				break;
+			case "popMenu" : 
+				popMenu();
 				break;
 			default: return;
 		} // switch (direction)
@@ -196,8 +201,19 @@ function customContextMenu(event) {
 	debugLog("show context menu")
 } // function customContextMenu
 
+
+function popMenu() {
+
+	contextElement.style.top = "10px";
+	contextElement.style.left = "10px";
+	contextElement.setAttribute("class","active")
+	debugLog("show context menu")
+	letMenuPop=true;
+} // function customContextMenu
+
 function respondToClick() {
-	contextElement.setAttribute("class","inactive")
+	if (!letMenuPop) contextElement.setAttribute("class","inactive")
+		else letMenuPop = false;
 } // function respondToClick()
 
 function setAboutArtist(action) {
