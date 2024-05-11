@@ -193,12 +193,19 @@ function customContextMenu(event) {
 	contextElement.style.left = event.offsetX + "px";
 	// contextElement.classList.add("active");
 	contextElement.setAttribute("class","active")
-	console.log("show context menu")
+	debugLog("show context menu")
 } // function customContextMenu
 
 function respondToClick() {
 	contextElement.setAttribute("class","inactive")
 } // function respondToClick()
+
+function setAboutArtist(action) {
+	const aboutArtist=document.getElementById("aboutArtist")
+	if (action=="hide") aboutArtist.setAttribute ("class","hidden");
+	if (action=="show") aboutArtist.setAttribute ("class","unhidden");
+	debugLog("set about artist: "+action)
+} // function setAboutArtist(action)
 // }}}handlers
 // {{{helpers
 function debugLog(msg) {

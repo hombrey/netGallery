@@ -306,7 +306,13 @@
 
 #context-menu .item {
 	padding: 15px 10px;
-	font-size: 1em;
+	font-size: 3em;
+	color:#eee;
+} /* #context-menu .item */
+
+
+#context-menu .i{
+	font-size: 3em;
 	color:#eee;
 } /* #context-menu .item */
 
@@ -321,3 +327,42 @@
 
 
 /* 		}}}context-menu */
+/* {{{aboutArtist */
+#aboutArtist {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100dvw;
+	height: 100dvh;
+	background-color:#00000087;
+  backdrop-filter: blur(45px);
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+} /* #aboutArtist */
+
+#aboutArtist.unhidden {
+	z-index: 6;
+	opacity: 1;	
+} /* #aboutArtist */
+
+#aboutArtist.hidden {
+	z-index: 0;
+	opacity: 0;	
+} /* #aboutArtist */
+
+#aboutImage {
+	width: 30dvw;
+} /* #aboutImage */
+
+#aboutInfo {
+	color: white;
+	font-size: 3.5em;
+	width: 30dvw;
+
+} /* #aboutImage */
+
+/* 		}}}aboutArtist */
